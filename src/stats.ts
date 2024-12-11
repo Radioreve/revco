@@ -1,24 +1,17 @@
 
-export function calculate(array: [], strict) {
+export function calculate(array: Array<number>) {
     let sum = 0;
     for (let i = 0; i < array.length; i++) {
         sum += array[i];
     }
 
     let avg = sum / array.length;
-    let min = array[0];
-    let max = array[0];
-    for (let i = 0; i < array.length; i++) {
-        if (array[i] < min) {
-            min = array[i];
-        }
-        if (array[i] > max) {
-            max = array[i];
-        }
-    }
-
     let median;
     array.sort();
+
+
+    const min = array[0];
+    const max = array[array.length-1]
     if (array.length % 2 === 0) {
         median = (array[array.length / 2 - 1] + array[array.length / 2]) / 2;
     } else {
@@ -26,10 +19,10 @@ export function calculate(array: [], strict) {
     }
 
     return {
-        sum: sum,
-        avg: avg,
-        minMax: { min: min, max: max },
-        max: max,
-        median: median,
+        sum,
+        avg,
+        min: min,
+        max,
+        median,
     };
 }
