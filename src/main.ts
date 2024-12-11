@@ -2,7 +2,7 @@ import { calculate } from "./stats.ts";
 
 let numbers = [5, 3, 8, 1, 2, 7];
 
-let stats = calculateStats(numbers);
+let stats = calculate(numbers);
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
